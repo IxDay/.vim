@@ -44,6 +44,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Sets how many lines of history VIM has to remember
 set history=700
 
@@ -133,11 +134,11 @@ set background=dark
 set t_Co=256
 
 " Set utf8 as standard encoding and en_US as the standard language
-set encoding=utf8
+"set encoding=utf8
+
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -328,7 +329,7 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
+map <leader>pp :setlocal paste!<cr>:startinsert<cr>
 
 " Toggle line numbers and
 map <leader>ps :setlocal number!<cr>:IndentLinesToggle<cr>
@@ -393,12 +394,26 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
+"I haven't found how to hide this function (yet)
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+
+function! s:Repl()
+    let s:restore_reg = @"
+    return "p@=RestoreRegister()\<cr>"
+endfunction
+
+" NB: this supports "rp that replaces the selection by the contents of @r
+vnoremap <silent> <expr> p <sid>Repl()
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/.vim/bundle')
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin('~/.config/nvim/bundle')
 
 Plugin 'godlygeek/tabular'
 Plugin 'gabrielelana/vim-markdown'
@@ -412,7 +427,6 @@ Plugin 'Rename'
 Plugin 'python.vim'
 Plugin 'cakebaker/scss-syntax.vim'
 
-Plugin 'Raimondi/delimitMate'
 Plugin 'pangloss/vim-javascript'
 
 Plugin 'wting/rust.vim'
@@ -445,7 +459,13 @@ let g:airline#extensions#tabline#enabled = 1
 set cindent
 
 " Add a 80 caracters limit
-highlight OverLength ctermbg=black ctermfg=red
-match OverLength /\%80v.\+/
+highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
+set colorcolumn=80
 
 let g:markdown_enable_spell_checking = 0
+
+" Map tabularize
+map <Leader>t=  :Tabularize /=<cr>
+map <Leader>t:  :Tabularize /:<cr>
+map <Leader>t:: :Tabularize /:\zs<cr>
+map <Leader>t,  :Tabularize /,<cr>
