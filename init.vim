@@ -420,7 +420,6 @@ Plugin 'gabrielelana/vim-markdown'
 Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'msanders/snipmate.vim'
 Plugin 'Yggdroot/indentLine'
 
 Plugin 'Rename'
@@ -440,6 +439,10 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'erikzaadi/vim-ansible-yaml'
 
+" Snipmate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
