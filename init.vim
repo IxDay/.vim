@@ -416,7 +416,6 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin('~/.config/nvim/bundle')
 
 Plugin 'godlygeek/tabular'
-Plugin 'gabrielelana/vim-markdown'
 Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'editorconfig/editorconfig-vim'
@@ -472,6 +471,3 @@ map <Leader>t=  :Tabularize /=<cr>
 map <Leader>t:  :Tabularize /:<cr>
 map <Leader>t:: :Tabularize /:\zs<cr>
 map <Leader>t,  :Tabularize /,<cr>
-
-" Add snippets to runtime path
-set rtp+=~/.config/nvim/snippets
