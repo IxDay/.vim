@@ -418,7 +418,6 @@ call vundle#begin('~/.config/nvim/bundle')
 Plugin 'godlygeek/tabular'
 Plugin 'terryma/vim-multiple-cursors'
 
-Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Yggdroot/indentLine'
 
 Plugin 'Rename'
@@ -437,6 +436,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'erikzaadi/vim-ansible-yaml'
+Plugin 'editorconfig/editorconfig-vim'
 
 " Snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -471,3 +471,6 @@ map <Leader>t=  :Tabularize /=<cr>
 map <Leader>t:  :Tabularize /:<cr>
 map <Leader>t:: :Tabularize /:\zs<cr>
 map <Leader>t,  :Tabularize /,<cr>
+
+" BEWARE: This remove trailing whitespace at save, remove if needed
+autocmd BufWritePre * %s/\s\+$//e
