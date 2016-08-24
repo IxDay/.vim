@@ -435,8 +435,8 @@ Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'erikzaadi/vim-ansible-yaml'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'rodjek/vim-puppet'
 
 " Snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
