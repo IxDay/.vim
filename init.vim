@@ -443,6 +443,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 
+Plugin 'scrooloose/nerdtree'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -474,3 +475,10 @@ map <Leader>t,  :Tabularize /,<cr>
 
 " BEWARE: This remove trailing whitespace at save, remove if needed
 autocmd BufWritePre * %s/\s\+$//e
+
+" Open NerdTree when vim opens if no file as been selected
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Ctrl-n to open NerdTree
+map <C-y> :NERDTreeToggle<CR>
