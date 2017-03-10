@@ -440,7 +440,7 @@ Plugin 'rodjek/vim-puppet'
 
 " Snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
+Plugin 'vim-scripts/tlib'
 Plugin 'garbas/vim-snipmate'
 
 Plugin 'scrooloose/nerdtree'
