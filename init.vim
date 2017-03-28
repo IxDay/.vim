@@ -480,5 +480,5 @@ autocmd BufWritePre * %s/\s\+$//e
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" Ctrl-n to open NerdTree
+" Ctrl-y to open NerdTree
 map <C-y> :NERDTreeToggle<CR>
