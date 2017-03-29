@@ -418,8 +418,6 @@ call vundle#begin('~/.config/nvim/bundle')
 Plugin 'godlygeek/tabular'
 Plugin 'terryma/vim-multiple-cursors'
 
-Plugin 'Yggdroot/indentLine'
-
 Plugin 'Rename'
 Plugin 'python.vim'
 Plugin 'cakebaker/scss-syntax.vim'
@@ -451,8 +449,6 @@ filetype plugin indent on    " required
 
 " Small adaptations
 nmap ,cc <Plug>Colorizer
-let g:indentLine_char = '┆'
-
 
 " Airline configuration
 let g:airline_powerline_fonts = 1
