@@ -468,6 +468,7 @@ map <Leader>t=  :Tabularize /=<cr>
 map <Leader>t:  :Tabularize /:<cr>
 map <Leader>t:: :Tabularize /:\zs<cr>
 map <Leader>t,  :Tabularize /,<cr>
+map <Leader>t	:Tabularize /
 
 " BEWARE: This remove trailing whitespace at save, remove if needed
 autocmd BufWritePre * %s/\s\+$//e
