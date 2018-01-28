@@ -444,6 +444,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'scrooloose/nerdtree'
 Plugin 'posva/vim-vue'
 " All of your Plugins must be added before the following line
+" Install all with: vim +PluginInstall +qall
 call vundle#end()            " required
 filetype plugin indent on    " required
 
