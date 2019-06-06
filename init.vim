@@ -123,6 +123,8 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" Display tabs as '>' char
+set list
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
@@ -457,7 +459,6 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='bubblegum'
 let g:airline#extensions#tabline#enabled = 1
 
-set cindent
 
 " Add a 80 caracters limit
 highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
@@ -478,6 +479,9 @@ autocmd BufWritePre * %s/\s\+$//e
 " Open NerdTree when vim opens if no file as been selected
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+let NERDTreeBookmarksFile=expand("~/.config/nvim/NERDTreeBookmarks")
+let NERDTreeShowHidden=1
 
 " Ctrl-y to open NerdTree
 map <C-y> :NERDTreeToggle<CR>
