@@ -132,7 +132,7 @@ set list
 " Enable syntax highlighting
 syntax enable
 
-set background=dark
+set background=light
 set t_Co=256
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -334,7 +334,7 @@ map <leader>q :e ~/buffer<cr>
 map <leader>pp :setlocal paste!<cr>:startinsert<cr>
 
 " Toggle line numbers and
-map <leader>ps :setlocal number!<cr>:IndentLinesToggle<cr>
+map <leader>ps :setlocal number!<cr>:setlocal list!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -456,12 +456,13 @@ nmap ,cc <Plug>Colorizer
 
 " Airline configuration
 let g:airline_powerline_fonts = 1
-let g:airline_theme='bubblegum'
+let g:airline_theme='solarized'
+"let g:airline_solarized_bg='light'
 let g:airline#extensions#tabline#enabled = 1
 
 
 " Add a 80 caracters limit
-highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
+highlight ColorColumn ctermbg=lightgray guibg=white
 set colorcolumn=80
 
 let g:markdown_enable_spell_checking = 0
