@@ -445,6 +445,7 @@ Plugin 'garbas/vim-snipmate'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'posva/vim-vue'
+Plugin 'ziglang/zig.vim'
 " All of your Plugins must be added before the following line
 " Install all with: vim +PluginInstall +qall
 call vundle#end()            " required
