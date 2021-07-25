@@ -220,6 +220,7 @@ map <leader>te :tabedit
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
+map <leader>pfn :echo expand('%:p')<cr>
 
 " Specify the behavior when switching between buffers
 try
