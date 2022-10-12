@@ -45,6 +45,10 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+if &shell =~# 'fish$'
+    set shell=sh
+endif
+
 " Sets how many lines of history VIM has to remember
 set history=700
 
@@ -441,12 +445,14 @@ Plugin 'rodjek/vim-puppet'
 
 " Snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'vim-scripts/tlib'
-Plugin 'garbas/vim-snipmate'
+" Plugin 'vim-scripts/tlib'
+" Plugin 'garbas/vim-snipmate'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'posva/vim-vue'
 Plugin 'ziglang/zig.vim'
+
+Plugin 'khaveesh/vim-fish-syntax'
 
 Plugin 'jvirtanen/vim-hcl'
 " All of your Plugins must be added before the following line
